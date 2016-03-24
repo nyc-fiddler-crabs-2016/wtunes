@@ -10,6 +10,8 @@ class AlbumsController < ApplicationController
 
   def show
     @album = Album.find(params[:id])
+    @artists = @album.artists
+    @artist = Artist.new
   end
 
   def create
@@ -18,14 +20,14 @@ class AlbumsController < ApplicationController
       flash[:success] = "album created successfully"
       redirect_to albums_path
     else
-      render 'new'
+      render 'albums/new'
     end
   end
 
   private
 
     def album_params
-      params.require(:album).permit(:title)
+      params.require(:album).permit(:title).merge(user_id: current_user.id)
     end
 
 end
