@@ -1,0 +1,7 @@
+<div class="albums">
+  <% @albums.each do |album| %>
+    <div class="album" id="<%= album.id %>">
+      <li><a href="albums/<%= album.id %>"><%= album.title %></a></li>
+    </div>
+  <% end %>
+</div>

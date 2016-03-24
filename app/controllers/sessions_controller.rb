@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       flash[:success] =  "#{@user.user_name} is successfully logged in."
-      redirect_to posts_path
+      redirect_to albums_path
     else
       flash[:error] = "username or password is incorrect."
       render 'new'

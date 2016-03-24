@@ -1,0 +1,17 @@
+<%= form_for @album do |f| %>
+
+  <% if @album.errors.any? %>
+    <div id="error-message">
+      <h2>You Have <%= pluralize(@album.errors.count, "error") %></h2>
+      <% @album.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <br>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= f.label :title %>:
+  <%= f.text_field :title %><br />
+
+  <%= f.submit %>
+<% end %>
