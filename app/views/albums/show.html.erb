@@ -3,15 +3,15 @@
   <li><%= @album.title %></li>
 </div>
 <br>
-<h4>who is the artist of this album</h4>
-<!-- url: artist_path(@album, @artist) -->
-<%= form_for @artist do |f| %>
-<%= f.label :name %>:
-<%= f.text_field :name %><br>
-<%= f.hidden_field :album_id, :value => @album.id %>
-<%= f.submit%>
 
-<% end %>
+<%= link_to :edit, edit_album_path(@album) %>
+
+<!-- <h4>Add A Song</h4> -->
+<!-- url: artist_path(@album, @artist) -->
+  <%# @artist ||= Artist.new %>
+  <%# render "form" %>
+
+
 
 
 <%= link_to 'home', [:albums] %>

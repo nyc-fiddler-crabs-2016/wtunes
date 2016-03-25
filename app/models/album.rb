@@ -1,7 +1,8 @@
 class Album < ActiveRecord::Base
-  validates :title, :user, presence: true
+  validates :title, presence: true
 
-  belongs_to :user
-  has_many :artists
+  belongs_to :artist
   has_many :songs
+
+  accepts_nested_attributes_for :songs
 end

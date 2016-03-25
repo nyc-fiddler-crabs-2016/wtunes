@@ -1,0 +1,15 @@
+<%= form_for @album do |f| %>
+  <%= f.label :title %>:
+  <%= f.text_field :title %><br>
+
+  <% @album.songs.each do |song| %>
+    <%= f.fields_for :songs, song do |song_form| %>
+    <br>
+      <%= song_form.label :name %>
+      <%= song_form.text_field :name %>
+
+    <% end %>
+  <% end %>
+  <%= f.submit%>
+<% end %>
+

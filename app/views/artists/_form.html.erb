@@ -1,0 +1,24 @@
+<%= form_for @artist do |f| %>
+
+  <% if @artist.errors.any? %>
+    <div id="error-message">
+      <h2>You Have <%= pluralize(@artist.errors.count, "error") %></h2>
+      <% @artist.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <br>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+  <% @artist.albums.each do |album| %>
+    <%= f.fields_for :albums, album do |album_fields| %>
+      <%= album_fields.label :title %>:
+      <%= album_fields.text_field :title %><br />
+    <% end %>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>

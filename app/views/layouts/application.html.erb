@@ -11,7 +11,8 @@
     <% if session[:user_id].present? %>
       <%= link_to 'logout', session_path(session[:user_id]), method: :delete%>
       <%= link_to 'profile', user_path(session[:user_id]) %>
-      <%= link_to 'new album', new_album_path %>
+      <%= link_to 'new artist', new_artist_path %> |
+      <%= render "layouts/menubar" %>
     <% else %>
       <%= link_to 'login', new_session_path %>
       <%= link_to 'signup', new_user_path %>
@@ -23,6 +24,7 @@
           <%= message %>
         </div>
       <% end %>
+
 
 <%= yield %>
 

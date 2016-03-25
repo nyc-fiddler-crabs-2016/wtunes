@@ -1,32 +1,34 @@
 class ArtistsController < ApplicationController
-  before_action :check_user_logged_in?
 
   def index
     @artists = Artist.all
   end
 
+  def new
+    @artist = Artist.new
+    @artist.albums.build
+  end
+
   def show
     @artist = Artist.find(params[:id])
-    @songs = @artist.songs
-    @song = Song.new
+    # @albums = @artist.albums
+    #@album = Album.new
   end
 
   def create
-
-  @artist = Artist.new(artist_params)
+    @artist = Artist.new(artist_params)
     if @artist.save
-      flash[:success] = "Artist added"
-      # render partial: "topics/conversation_response", layout: false
-      redirect_to @artist
+      flash[:success] = "artist created successfully"
+      redirect_to artists_path
     else
-      render "albums/show"
+      render 'artists/new'
     end
   end
 
-
   private
-  def artist_params
-    params.require(:artist).permit(:name, :album_id)
-  end
+
+    def artist_params
+      params.require(:artist).permit(:name, albums_attributes: [:id, :title]).merge(user_id: current_user.id)
+    end
 
 end

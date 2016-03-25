@@ -1,5 +1,12 @@
 <div class="artist">
-  <li><%= @artist.album.title %></li>
-  <li><%= @artist.name %></li>
+  <h1><%= @artist.name %></h1>
+  <% @artist.albums.each do |album| %>
+    <li><%= link_to album.title, edit_album_path(album) %></li>
+  <% end %>
 </div>
 <br>
+
+<!-- <h4>Add album</h4> -->
+
+
+<%= link_to 'home', [:artists] %>

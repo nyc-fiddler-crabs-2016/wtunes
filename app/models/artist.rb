@@ -1,6 +1,9 @@
 class Artist < ActiveRecord::Base
-  validates :name, :album, presence: true
+  validates :name, presence: true
 
+  belongs_to :user
+  has_many :albums
   has_many :songs
-  belongs_to :album
+
+  accepts_nested_attributes_for :albums, :songs
 end
