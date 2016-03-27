@@ -1,4 +1,7 @@
-<h1>Songs</h1>
-<% @songs.each do |song| %>
-<li><%= song.name %></li>
-<% end  %>
+<div  class="songs">
+  <% @songs.each do |song| %>
+    <div class="song">
+      <li><%= song.name %></li>
+    </div>
+  <% end %>
+</div>

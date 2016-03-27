@@ -1,0 +1,30 @@
+.artists {
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+.artist li{
+  margin-top:20px;
+  list-style-type: none;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.artist li a{
+  margin-left: 20px;
+}
+
+.artist {
+  background-color: lightgray;
+}
+
+.artist-show {
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  background-color: lightgray;
+  padding: 20px;
+}

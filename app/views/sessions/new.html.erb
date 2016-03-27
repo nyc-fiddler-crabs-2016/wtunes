@@ -1,5 +1,6 @@
-<h1>Login</h1>
-
+<div class="auth">
+<h2>please login:</h2>
+<br>
 <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> </h2>
@@ -8,9 +9,10 @@
         <% end %>
       </div>
     <% end %>
-
-  <%= form_tag sessions_path do %>
-    username: <%= text_field_tag :user_name %>
-    Password: <%= password_field_tag :password %>
-    <%= submit_tag "Submit" %>
-  <% end %>
+    <br>
+    <%= form_tag sessions_path do %>
+      username: <%= text_field_tag :user_name %>
+      Password: <%= password_field_tag :password %>
+      <%= submit_tag "Submit" %>
+    <% end %>
+  </div>

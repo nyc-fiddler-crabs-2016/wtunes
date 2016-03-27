@@ -1,17 +1,11 @@
-<div class="album">
+<div class="album-show">
   <br>
   <li><%= @album.title %></li>
+  <li><%= @album.artist.name %></li>
+  <br>
+  <% @album.songs.each do |song| %>
+  <li><%= song.name %></li>
+  <% end %>
+  <%= link_to :edit, edit_album_path(@album) %>
 </div>
-<br>
 
-<%= link_to :edit, edit_album_path(@album) %>
-
-<!-- <h4>Add A Song</h4> -->
-<!-- url: artist_path(@album, @artist) -->
-  <%# @artist ||= Artist.new %>
-  <%# render "form" %>
-
-
-
-
-<%= link_to 'home', [:albums] %>

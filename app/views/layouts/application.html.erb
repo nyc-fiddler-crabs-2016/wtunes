@@ -8,15 +8,17 @@
 </head>
 <body>
   <header>
-    <% if session[:user_id].present? %>
-      <%= link_to 'logout', session_path(session[:user_id]), method: :delete%>
-      <%= link_to 'profile', user_path(session[:user_id]) %>
-      <%= link_to 'new artist', new_artist_path %> |
-      <%= render "layouts/menubar" %>
-    <% else %>
-      <%= link_to 'login', new_session_path %>
-      <%= link_to 'signup', new_user_path %>
-    <% end %>
+    <div class="user-info">
+      <% if session[:user_id].present? %>
+        <li><%= link_to 'logout', session_path(session[:user_id]), method: :delete%></li>
+        <li><%= link_to 'profile', user_path(session[:user_id]) %></li>
+        <li><%= link_to 'new artist', new_artist_path %></li>
+        <%= render "layouts/menubar" %>
+      <% else %>
+        <%= link_to 'login', new_session_path %>
+        <%= link_to 'signup', new_user_path %>
+      <% end %>
+    </div>
   </header>
 
    <% flash.each do |message_type, message| %>

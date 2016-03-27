@@ -1,4 +1,4 @@
-<div class="artist">
+<div class="artist-show">
   <h1><%= @artist.name %></h1>
   <% @artist.albums.each do |album| %>
     <li><%= link_to album.title, edit_album_path(album) %></li>
@@ -6,7 +6,5 @@
 </div>
 <br>
 
-<!-- <h4>Add album</h4> -->
 
 
-<%= link_to 'home', [:artists] %>

@@ -1,0 +1,30 @@
+.albums {
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+.album li{
+  margin-top:20px;
+  list-style-type: none;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.album li a{
+  margin-left: 20px;
+}
+
+.album {
+  background-color: lightgray;
+}
+
+.album-show {
+  margin-top: 100px;
+  background-color: lightgray;
+  padding: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
